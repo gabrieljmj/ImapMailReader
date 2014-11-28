@@ -32,7 +32,7 @@ Use the method ```ImapMailReader::getMailBoxes``` to return an instance of ```\G
 ```php
 $mailBoxes = $reader->getMailBoxes('*')->getIterator();
 ```
-Each iterator value is an instance of ```\Gabrieljmj\ImapMailReader\MailBox```, that has the methods ```getName```, ```getDelimiter```, ```getAttributes``` and ```getMessagesIterator```, that returns an iterator to the messages of the box. As argument of this method, pass a pattern, to select what messages. Each message is an instance of ```\Gabrieljmj\ImapMailReader\Message```, that you can see the methods [here](https://github.com/gabrieljmj/imapmailreader/master/tree/src/gabrieljmj/imapmailreader/message.php).
+Each iterator value is an instance of ```\Gabrieljmj\ImapMailReader\MailBox```, that has the methods ```getName```, ```getDelimiter```, ```getAttributes``` and ```getMessagesIterator```, that returns an iterator to the messages of the box. As argument of this method, pass a pattern, to select what messages. Each message is an instance of ```\Gabrieljmj\ImapMailReader\Message```, that you can see the methods [here](https://github.com/GabrielJMJ/ImapMailReader/blob/master/src/gabrieljmj/ImapMailReader/Message.php).
 ```php
 while ($mailBoxes->valid()) {
     $currentBox = $mailBoxes->current();
