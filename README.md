@@ -5,7 +5,7 @@ This library serves to list mail boxes and read messages from IMAP servers.
 ##Needs
  * [IMAP library](http://php.net/manual/pt_BR/book.imap.php)
 
-##Basic usage
+##Usage
 ###Opening a connection
 To open a connection with a IMAP server, create an instance of ```\Gabrieljmj\ImapMailReader\ImapConnector``` and the return of the method ```ImapConnector::open``` will be your stream. The user and the password are not necessary if you setted them with ```ImapConnector::setUsername``` and ```ImapConnector::setPassword```.
 
