@@ -27,7 +27,7 @@ use Gabrieljmj\ImapMailReader\ImapMailReader;
 $reader = new ImapMailReader($imap_stream, $imap_connector);
 ```
 
-###Listing mail boxes
+###Listing mail boxes and reading mails
 Use the method ```ImapMailReader::getMailBoxes``` to return an instance of ```\Gabrieljmj\ImapMailReader\MailBoxes```, that is an iterator to mail boxes. Pass as argument the pattern to select the boxes.
 ```php
 $mailBoxes = $reader->getMailBoxes('*')->getIterator();
