@@ -12,9 +12,24 @@ namespace Gabrieljmj\ImapMailReader;
 class ImapConnection
 {
     /**
+     * IMAP connection opened
+     *
+     * @var mixed
+    */
+    private $stream;
+
+    /**
+     * Connected server
+     *
+     * @var string
+    */
+    private $server;
+
+    /**
      * Open an IMAP stream to a mailbox
      *
-     * @param mixed $stream
+     * @param mixed  $stream
+     * @param string $server
     */
     public function __construct($stream, $server)
     {
@@ -40,6 +55,9 @@ class ImapConnection
         return $this->stream;
     }
 
+    /**
+     * @return string
+    */
     public function getServer()
     {
         return $this->server;

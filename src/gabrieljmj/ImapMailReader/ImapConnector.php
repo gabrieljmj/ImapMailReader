@@ -18,13 +18,22 @@ class ImapConnector
     */
     private $username;
 
+    /**
+     * @var string
+    */
     private $password;
 
+    /**
+     * @param string $user
+    */
     public function setUsername($user)
     {
         $this->username = $user;
     }
 
+    /**
+     * @param string $pass
+    */
     public function setPassword($pass)
     {
         $this->password = $pass;
@@ -39,6 +48,7 @@ class ImapConnector
      * @param integer    $options   The options are a bit mask with one or more. Learn more: http://php.net/manual/pt_BR/function.imap-open.php
      * @param integer    $n_retires Number of maximum connect attempts
      * @param array      $params    Connection parameters. Learn more: http://php.net/manual/pt_BR/function.imap-open.php
+     * @return \Gabrieljmj\ImapMailReader\ImapConnection
     */
     public function open($mailbox, $user = null, $password = null, $options = 0, $n_retries = 0, array $params = array())
     {
