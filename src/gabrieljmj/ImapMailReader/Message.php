@@ -307,12 +307,14 @@ class Message
 
     /**
      * Detects all message params
+     *
+     * @param boolean $isUid
     */
     private function detectMessageParams($isUid)
     {
         $stream = $isUid ? imap_fetch_overview($this->connection->getStream(), $this->message_id, FT_UID) : imap_fetch_overview($this->connection->getStream(), $this->message_id);
         $streamData = [];
-        
+
         foreach ($stream as $message) {
            $streamData[] = get_object_vars($message);
         }
