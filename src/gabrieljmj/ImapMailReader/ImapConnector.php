@@ -10,6 +10,7 @@
 namespace Gabrieljmj\ImapMailReader;
 
 use Gabrieljmj\ImapMailReader\ImapConnector;
+use Gabrieljmj\ImapMailReader\Exception\ImapException;
 
 class ImapConnector
 {
