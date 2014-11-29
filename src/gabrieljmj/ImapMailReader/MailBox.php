@@ -21,6 +21,11 @@ class MailBox
     private $connection;
 
     /**
+     * @var \Gabrieljmj\ImapMailReader\ImapConnector
+    */
+    private $connector;
+
+    /**
      * @var string
     */
     private $name;
@@ -37,6 +42,7 @@ class MailBox
 
     /**
      * @param \Gabrieljmj\ImapMailReader\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\ImapConnector  $connector
      * @param string                                    $name
      * @param string                                    $attributes
      * @param string                                    $delimiter

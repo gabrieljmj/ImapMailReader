@@ -16,7 +16,18 @@ use Gabrieljmj\ImapMailReader\Message;
 class ImapMailReader
 {
     /**
+     * @var \Gabrieljmj\ImapMailReader\ImapConnection
+    */
+    private $connection;
+
+    /**
+     * @var \Gabrieljmj\ImapMailReader\ImapConnector
+    */
+    private $connector;
+
+    /**
      * @param \Gabrieljmj\ImapMailReader\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\ImapConnector  $connector
     */
     public function __construct(ImapConnection $connection, ImapConnector $connector)
     {
