@@ -53,11 +53,11 @@ class ImapConnector
     public function open($mailbox, $user = null, $password = null, $options = 0, $n_retries = 0, array $params = array())
     {
         if ($user === null && $this->username === null) {
-            throw new \Exception('Username not defined');
+            ImapException::usernameNotDefined();
         }
 
         if ($password === null && $this->password === null) {
-            throw new \Exception('Password not defined');
+            ImapException::passwordNotDefined();
         }
 
         $username = $user !== null ? $user : $this->username;
