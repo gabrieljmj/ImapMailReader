@@ -9,7 +9,7 @@
 
 namespace Gabrieljmj\ImapMailReader;
 
-use Gabrieljmj\ImapMailReader\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnection;
 use \IteratorAggregate;
 use \ArrayIterator;
 
@@ -32,7 +32,7 @@ class MailBoxes implements IteratorAggregate
         $mailboxes = imap_getmailboxes($connection->getStream(), $server, $pattern);
 
         foreach ($mailboxes as $mailbox) {
-            $this->mailboxes[] = new MailBox($connection, $connector, $mailbox->name, $mailbox->attributes, $mailbox->delimiter);
+            $this->mailboxes[] = new MailBox($connection, $connector, $mailbox->name);
         }
     }
 

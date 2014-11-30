@@ -9,7 +9,7 @@
 
 namespace Gabrieljmj\ImapMailReader;
 
-use Gabrieljmj\ImapMailReader\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnection;
 
 class Message
 {
@@ -303,6 +303,17 @@ class Message
     public function getUID()
     {
         return $this->uid;
+    }
+
+    /**
+     * Returns header for a message
+     *
+     * @param integer|null $options
+     * @return string
+    */
+    public function getHeader($options = null)
+    {
+        return imap_fetchheader($this->connection->getStream(), $this->uid, $options | FT_UID);
     }
 
     /**

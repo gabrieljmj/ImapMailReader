@@ -9,8 +9,10 @@
 
 namespace Gabrieljmj\ImapMailReader;
 
-use Gabrieljmj\ImapMailReader\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnector;
 use Gabrieljmj\ImapMailReader\MailBoxes;
+use Gabrieljmj\ImapMailReader\MailBox;
 use Gabrieljmj\ImapMailReader\Message;
 
 class ImapMailReader
@@ -36,13 +38,24 @@ class ImapMailReader
     }
 
     /**
-     * Read the list of mailboxes, returning detailed information on each one
+     * Read the list of mailboxes
      *
      * @return \Gabrieljmj\ImapMailReader\MailBoxes
     */
     public function getMailBoxes($pattern)
     {
         return new MailBoxes($this->connection, $this->connector, $this->connection->getServer(), $pattern);
+    }
+
+    /**
+     * Returns a mail box
+     *
+     * @param string $name
+     * @return 
+    */
+    public function getMailBox($name)
+    {
+        return new MailBox($this->connection, $this->connector, $name);
     }
 
     /**

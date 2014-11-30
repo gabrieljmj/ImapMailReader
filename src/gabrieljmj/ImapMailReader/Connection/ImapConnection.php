@@ -7,7 +7,7 @@
  * @license MIT License
 */
 
-namespace Gabrieljmj\ImapMailReader;
+namespace Gabrieljmj\ImapMailReader\Connection;
 
 class ImapConnection
 {

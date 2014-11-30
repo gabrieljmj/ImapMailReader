@@ -9,7 +9,8 @@
 
 namespace Gabrieljmj\ImapMailReader;
 
-use Gabrieljmj\ImapMailReader\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnection;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnector;
 use Gabrieljmj\ImapMailReader\Message;
 use \ArrayIterator;
 
@@ -47,7 +48,7 @@ class MailBox
      * @param string                                    $attributes
      * @param string                                    $delimiter
     */
-    public function __construct(ImapConnection $connection, ImapConnector $connector, $name, $attributes, $delimiter)
+    public function __construct(ImapConnection $connection, ImapConnector $connector, $name)
     {
         $this->connection = $connection;
         $this->connector = $connector;
@@ -65,22 +66,7 @@ class MailBox
     }
 
     /**
-     * @return string
-    */
-    public function getAttributes()
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * @return string
-    */
-    public function getDelimiter()
-    {
-        return $this->delimiter;
-    }
-
-    /**
+     * @param string $pattern
      * @return \ArrayIterator
     */
     public function getMessagesIterator($pattern)

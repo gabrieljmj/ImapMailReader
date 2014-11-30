@@ -7,9 +7,9 @@
  * @license MIT License
 */
 
-namespace Gabrieljmj\ImapMailReader;
+namespace Gabrieljmj\ImapMailReader\Connection;
 
-use Gabrieljmj\ImapMailReader\ImapConnector;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnector;
 use Gabrieljmj\ImapMailReader\Exception\ImapException;
 
 class ImapConnector
