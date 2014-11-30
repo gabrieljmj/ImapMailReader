@@ -17,12 +17,12 @@ use \ArrayIterator;
 class MailBox
 {
     /**
-     * @var \Gabrieljmj\ImapMailReader\ImapConnection
+     * @var \Gabrieljmj\ImapMailReader\Connection\ImapConnection
     */
     private $connection;
 
     /**
-     * @var \Gabrieljmj\ImapMailReader\ImapConnector
+     * @var \Gabrieljmj\ImapMailReader\Connection\ImapConnector
     */
     private $connector;
 
@@ -42,11 +42,9 @@ class MailBox
     private $delimiter;
 
     /**
-     * @param \Gabrieljmj\ImapMailReader\ImapConnection $connection
-     * @param \Gabrieljmj\ImapMailReader\ImapConnector  $connector
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnector  $connector
      * @param string                                    $name
-     * @param string                                    $attributes
-     * @param string                                    $delimiter
     */
     public function __construct(ImapConnection $connection, ImapConnector $connector, $name)
     {

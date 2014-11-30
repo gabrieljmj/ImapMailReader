@@ -23,9 +23,10 @@ class MailBoxes implements IteratorAggregate
     private $mailboxes = [];
 
     /**
-     * @param \Gabrieljmj\Imap\ImapConnection $connection
-     * @param string                          $server
-     * @param string                          $pattern
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnector  $connector
+     * @param string                                               $server
+     * @param string                                               $pattern
     */
     public function __construct(ImapConnection $connection, ImapConnector $connector, $server, $pattern)
     {

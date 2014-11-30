@@ -18,18 +18,18 @@ use Gabrieljmj\ImapMailReader\Message;
 class ImapMailReader
 {
     /**
-     * @var \Gabrieljmj\ImapMailReader\ImapConnection
+     * @var \Gabrieljmj\ImapMailReader\Connection\ImapConnection
     */
     private $connection;
 
     /**
-     * @var \Gabrieljmj\ImapMailReader\ImapConnector
+     * @var \Gabrieljmj\ImapMailReader\Connection\ImapConnector
     */
     private $connector;
 
     /**
-     * @param \Gabrieljmj\ImapMailReader\ImapConnection $connection
-     * @param \Gabrieljmj\ImapMailReader\ImapConnector  $connector
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnector  $connector
     */
     public function __construct(ImapConnection $connection, ImapConnector $connector)
     {
@@ -51,7 +51,7 @@ class ImapMailReader
      * Returns a mail box
      *
      * @param string $name
-     * @return 
+     * @return \Gabrieljmj\ImapMailReader\MailBox
     */
     public function getMailBox($name)
     {

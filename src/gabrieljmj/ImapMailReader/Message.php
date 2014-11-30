@@ -16,7 +16,7 @@ class Message
     /**
      * Imap stream
      *
-     * @var \Gabrieljmj\ImapMailReader\ImapConnection
+     * @var \Gabrieljmj\ImapMailReader\Connection\ImapConnection
     */
     private $connection;
 
@@ -133,7 +133,7 @@ class Message
     private $draft;
 
     /**
-     * @param \Gabrieljmj\ImapMailReader\ImapConnection $connection
+     * @param \Gabrieljmj\ImapMailReader\Connection\ImapConnection $connection
      * @param integer                                   $id
      * @param boolean                                   $isUid
     */
