@@ -13,7 +13,7 @@ Method ```ImapConnector::open``` will return an instance of ```\Gabrieljmj\ImapM
 
 Some server can be found [here](https://github.com/GabrielJMJ/ImapMailReader#gabrieljmjimapmailreaderimapserver).
 ```php
-use Gabrieljmj\ImapMailReader\ImapConnector;
+use Gabrieljmj\ImapMailReader\Connection\ImapConnector;
 use Gabrieljmj\ImapMailReader\ImapServer;
 
 $imap_connector = new ImapConnector();
