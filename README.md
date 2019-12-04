@@ -2,11 +2,11 @@ Gabrieljmj\ImapMailReader
 =========================
 This library serves to list mail boxes and read messages from IMAP servers.
 
-##Needs
+## Needs
  * [IMAP library](http://php.net/manual/pt_BR/book.imap.php)
 
-##Usage
-###Opening a connection
+## Usage
+### Opening a connection
 To open a connection with a IMAP server, create an instance of ```\Gabrieljmj\ImapMailReader\Connection\ImapConnector``` and the return of the method ```ImapConnector::open``` will be your stream. The user and the password are not necessary if you setted them with ```ImapConnector::setUsername``` and ```ImapConnector::setPassword```.
 
 Method ```ImapConnector::open``` will return an instance of ```\Gabrieljmj\ImapMailReader\Connection\ImapConnection```, that has methods ```close``` to close the connection, ```getStream``` to get the created stream and ```getServer```, that returns the connected server.
@@ -28,7 +28,7 @@ use Gabrieljmj\ImapMailReader\ImapMailReader;
 $reader = new ImapMailReader($imap_stream, $imap_connector);
 ```
 
-###Listing mail boxes and reading mails
+### Listing mail boxes and reading mails
 Use the method ```ImapMailReader::getMailBoxes``` to return an instance of ```\Gabrieljmj\ImapMailReader\MailBoxes```, that is an iterator to mail boxes. Pass as argument the pattern to select the boxes.
 ```php
 $mailBoxes = $reader->getMailBoxes('*')->getIterator();
@@ -51,7 +51,7 @@ while ($mailBoxes->valid()) {
 }
 ```
 
-##Gabrieljmj\ImapMailReader\ImapServer
+## Gabrieljmj\ImapMailReader\ImapServer
 List of servers in the class ```ImapServer```:
 * OUTLOOK (**SSL**)
 * GMAIL (**SSL**)
